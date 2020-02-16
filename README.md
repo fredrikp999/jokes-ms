@@ -28,3 +28,8 @@ Use postman, browser, curl or whatever
 http://localhost:3000/v1/jokes
 http://localhost:3000/v1/randomjoke
 
+<H2>Remember to push is correctly with a tag to docker hub</H2>
+> docker build -t skonk/jokes-ms:chill80 .
+> docker push skonk/jokes-ms:chill80
+> (and then reference this version/tag from helm Chart.yaml)
+
