@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose the port serving REST requests
-EXPOSE 3000
+EXPOSE 80
 
 # Start the service
 CMD ["node", "server.js"]

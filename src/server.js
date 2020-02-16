@@ -18,10 +18,15 @@ const request = require('request');
 // const port = servicesPorts.jokesPort;
 
 // But let's actually hardcode the port. It is anyway exposed through docker to custom port
-const port = 3000
+const port = 80
 
 // Enable serving of static files stored in the directory 'public' e.g. index.html
 app.use(express.static('public'))
+
+app.get('/', function (req,res){
+    res.send('I am alive!');
+    console.log("Root endpoint accessed. Probed by K8s?");
+});
 
 // One endpoint we just write back some stuff for
 app.get('/v1/jokes/', function (req,res){
