@@ -1,9 +1,9 @@
 node {
-    checkout scm
+    stage('Checkout'){
+        checkout scm
+    }
 
-    def customImage = docker.build("skonk/jokes-ms:${env.BUILD_ID}")
-
-    customImage.inside {
-        sh 'echo "hello"'
+    stage ('Build Image'){
+        def customImage = docker.build("skonk/jokes-ms:${env.BUILD_ID}")
     }
 }
